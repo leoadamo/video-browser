@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <SearchBar @termChange="onTermChange" />
-    <VideoList :data="videos" />
+    <VideoList :videos="videos" />
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
   methods: {
     onTermChange(searchTerm) {
       axios
-        .get('https://www.googleapis.com/youtube/v3/search', {
+        .get(process.env.VUE_APP_API_URL, {
           params: {
             key: process.env.VUE_APP_API_KEY,
             type: 'video',
@@ -37,5 +37,3 @@ export default {
   }
 };
 </script>
-
-<style></style>

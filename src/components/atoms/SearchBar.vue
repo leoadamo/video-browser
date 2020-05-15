@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-searchBar">
     <input type="text" @input="onInput" />
   </div>
 </template>
@@ -14,9 +14,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-input {
-  border: 0.1px solid #1c1c1c;
-}
-</style>

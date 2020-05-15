@@ -1,21 +1,23 @@
 <template>
-  <ul>
-    <li v-for="item in data" :key="item.id">
-      {{ item.title }}
-    </li>
+  <ul class="list-group">
+    <VideoListItem
+      v-for="video in videos"
+      :key="video.id.videoId"
+      :video="video"
+    />
   </ul>
 </template>
 
 <script>
+import VideoListItem from '@/components/atoms/VideoListItem';
+
 export default {
   name: 'VideoList',
+  components: {
+    VideoListItem
+  },
   props: {
-    data: {
-      type: Array,
-      default: null
-    }
+    videos: Array
   }
 };
 </script>
-
-<style></style>
